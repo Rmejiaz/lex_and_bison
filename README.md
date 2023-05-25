@@ -1,1 +1,3 @@
-# lex_and_bison
+# Uso de Lex y Bison
+
+Este repositorio contiene dos ejemplos del uso de lex y bison.
