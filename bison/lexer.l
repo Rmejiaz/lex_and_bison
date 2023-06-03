@@ -1,5 +1,5 @@
 %{
-#include "y.tab.h"
+#include "boolean_analyzer.tab.h"
 %}
 
 %%

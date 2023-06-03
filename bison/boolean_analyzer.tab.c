@@ -72,7 +72,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#line 76 "y.tab.c"
+#line 76 "boolean_analyzer.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -95,65 +95,7 @@
 #  endif
 # endif
 
-/* Use api.header.include to #include this header
-   instead of duplicating it here.  */
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
-/* Debug traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-#if YYDEBUG
-extern int yydebug;
-#endif
-
-/* Token kinds.  */
-#ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-  enum yytokentype
-  {
-    YYEMPTY = -2,
-    YYEOF = 0,                     /* "end of file"  */
-    YYerror = 256,                 /* error  */
-    YYUNDEF = 257,                 /* "invalid token"  */
-    OR = 258,                      /* OR  */
-    AND = 259,                     /* AND  */
-    NOT = 260,                     /* NOT  */
-    TRUE = 261,                    /* TRUE  */
-    FALSE = 262,                   /* FALSE  */
-    bool = 263,                    /* bool  */
-    resultado = 264                /* resultado  */
-  };
-  typedef enum yytokentype yytoken_kind_t;
-#endif
-/* Token kinds.  */
-#define YYEMPTY -2
-#define YYEOF 0
-#define YYerror 256
-#define YYUNDEF 257
-#define OR 258
-#define AND 259
-#define NOT 260
-#define TRUE 261
-#define FALSE 262
-#define bool 263
-#define resultado 264
-
-/* Value type.  */
-#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
-# define YYSTYPE_IS_DECLARED 1
-#endif
-
-
-extern YYSTYPE yylval;
-
-
-int yyparse (void);
-
-
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+#include "boolean_analyzer.tab.h"
 /* Symbol kind.  */
 enum yysymbol_kind_t
 {
@@ -166,14 +108,12 @@ enum yysymbol_kind_t
   YYSYMBOL_NOT = 5,                        /* NOT  */
   YYSYMBOL_TRUE = 6,                       /* TRUE  */
   YYSYMBOL_FALSE = 7,                      /* FALSE  */
-  YYSYMBOL_bool = 8,                       /* bool  */
-  YYSYMBOL_resultado = 9,                  /* resultado  */
-  YYSYMBOL_10_ = 10,                       /* '('  */
-  YYSYMBOL_11_ = 11,                       /* ')'  */
-  YYSYMBOL_YYACCEPT = 12,                  /* $accept  */
-  YYSYMBOL_bexpr = 13,                     /* bexpr  */
-  YYSYMBOL_bterm = 14,                     /* bterm  */
-  YYSYMBOL_bfactor = 15                    /* bfactor  */
+  YYSYMBOL_8_ = 8,                         /* '('  */
+  YYSYMBOL_9_ = 9,                         /* ')'  */
+  YYSYMBOL_YYACCEPT = 10,                  /* $accept  */
+  YYSYMBOL_bexpr = 11,                     /* bexpr  */
+  YYSYMBOL_bterm = 12,                     /* bterm  */
+  YYSYMBOL_bfactor = 13                    /* bfactor  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -501,10 +441,10 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  10
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   12
+#define YYLAST   13
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  12
+#define YYNTOKENS  10
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  4
 /* YYNRULES -- Number of rules.  */
@@ -513,7 +453,7 @@ union yyalloc
 #define YYNSTATES  16
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   264
+#define YYMAXUTOK   262
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -531,7 +471,7 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-      10,    11,     2,     2,     2,     2,     2,     2,     2,     2,
+       8,     9,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -553,14 +493,14 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6,     7,     8,     9
+       5,     6,     7
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    16,    16,    17,    20,    21,    24,    25,    26,    27
+       0,    13,    13,    14,    17,    18,    21,    22,    23,    24
 };
 #endif
 
@@ -577,8 +517,7 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "OR", "AND", "NOT",
-  "TRUE", "FALSE", "bool", "resultado", "'('", "')'", "$accept", "bexpr",
-  "bterm", "bfactor", YY_NULLPTR
+  "TRUE", "FALSE", "'('", "')'", "$accept", "bexpr", "bterm", "bfactor", YY_NULLPTR
 };
 
 static const char *
@@ -602,8 +541,8 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -3,    -3,    -4,    -4,    -3,     5,     2,    -4,    -4,    -2,
-      -4,    -3,    -3,    -4,     2,    -4
+      -3,    -3,    -4,    -4,    -3,     6,     4,    -4,    -4,    -2,
+      -4,    -3,    -3,    -4,     4,    -4
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -618,7 +557,7 @@ static const yytype_int8 yydefact[] =
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -4,     6,     1,    -1
+      -4,     8,     2,    -1
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -632,28 +571,28 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       8,    11,     1,     2,     3,    10,    12,     4,    11,    13,
-       9,    15,    14
+       8,    11,     1,     2,     3,     4,    10,    13,    12,    11,
+       0,    15,     9,    14
 };
 
 static const yytype_int8 yycheck[] =
 {
-       1,     3,     5,     6,     7,     0,     4,    10,     3,    11,
-       4,    12,    11
+       1,     3,     5,     6,     7,     8,     0,     9,     4,     3,
+      -1,    12,     4,    11
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     5,     6,     7,    10,    13,    14,    15,    15,    13,
-       0,     3,     4,    11,    14,    15
+       0,     5,     6,     7,     8,    11,    12,    13,    13,    11,
+       0,     3,     4,     9,    12,    13
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    12,    13,    13,    14,    14,    15,    15,    15,    15
+       0,    10,    11,    11,    12,    12,    13,    13,    13,    13
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
@@ -1123,55 +1062,55 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* bexpr: bexpr OR bterm  */
-#line 16 "boolean_analyzer.y"
-                        { yyval = (yyvsp[-2] || yyvsp[0]) }
-#line 1129 "y.tab.c"
+#line 13 "boolean_analyzer.y"
+                        { printf("Result: %s\n", yyvsp[-2] || yyvsp[0] ? "true" : "false"); }
+#line 1068 "boolean_analyzer.tab.c"
     break;
 
   case 3: /* bexpr: bterm  */
-#line 17 "boolean_analyzer.y"
-                        { yyval = yyvsp[0]; }
-#line 1135 "y.tab.c"
+#line 14 "boolean_analyzer.y"
+                        { printf("Result: %s\n", yyvsp[0] ? "true" : "false"); }
+#line 1074 "boolean_analyzer.tab.c"
     break;
 
   case 4: /* bterm: bterm AND bfactor  */
-#line 20 "boolean_analyzer.y"
+#line 17 "boolean_analyzer.y"
                          { yyval = yyvsp[-2] && yyvsp[0]; }
-#line 1141 "y.tab.c"
+#line 1080 "boolean_analyzer.tab.c"
     break;
 
   case 5: /* bterm: bfactor  */
-#line 21 "boolean_analyzer.y"
-                         { yyval = yyvsp[0]; }
-#line 1147 "y.tab.c"
+#line 18 "boolean_analyzer.y"
+                        { yyval = yyvsp[0]; }
+#line 1086 "boolean_analyzer.tab.c"
     break;
 
   case 6: /* bfactor: NOT bfactor  */
-#line 24 "boolean_analyzer.y"
+#line 21 "boolean_analyzer.y"
                         { yyval = !yyvsp[0]; }
-#line 1153 "y.tab.c"
+#line 1092 "boolean_analyzer.tab.c"
     break;
 
   case 7: /* bfactor: '(' bexpr ')'  */
-#line 25 "boolean_analyzer.y"
+#line 22 "boolean_analyzer.y"
                         { yyval = yyvsp[-1]; }
-#line 1159 "y.tab.c"
+#line 1098 "boolean_analyzer.tab.c"
     break;
 
   case 8: /* bfactor: TRUE  */
-#line 26 "boolean_analyzer.y"
+#line 23 "boolean_analyzer.y"
                          { yyval = true; }
-#line 1165 "y.tab.c"
+#line 1104 "boolean_analyzer.tab.c"
     break;
 
   case 9: /* bfactor: FALSE  */
-#line 27 "boolean_analyzer.y"
+#line 24 "boolean_analyzer.y"
                          { yyval = false; }
-#line 1171 "y.tab.c"
+#line 1110 "boolean_analyzer.tab.c"
     break;
 
 
-#line 1175 "y.tab.c"
+#line 1114 "boolean_analyzer.tab.c"
 
       default: break;
     }
@@ -1364,7 +1303,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 30 "boolean_analyzer.y"
+#line 27 "boolean_analyzer.y"
 
 
 int yylex();
@@ -1376,6 +1315,5 @@ void yyerror(const char* msg) {
 
 int main() {
     yyparse();
-    printf("Result: %s\n", resultado ? "true" : "false");
     return 0;
 }

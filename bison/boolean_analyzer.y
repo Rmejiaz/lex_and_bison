@@ -8,17 +8,14 @@
 %left AND
 %right NOT
 
-bool resultado;
 %%
 
-
-
-bexpr: bexpr OR bterm   { $$ = ($1 || $3) }
-     | bterm            { $$ = $1; }
+bexpr: bexpr OR bterm   { printf("Result: %s\n", $1 || $3 ? "true" : "false"); }
+     | bterm            { printf("Result: %s\n", $1 ? "true" : "false"); }
      ;
 
 bterm: bterm AND bfactor { $$ = $1 && $3; }
-     | bfactor           { $$ = $1; }
+     | bfactor          { $$ = $1; }
      ;
 
 bfactor: NOT bfactor    { $$ = !$2; }
@@ -38,6 +35,5 @@ void yyerror(const char* msg) {
 
 int main() {
     yyparse();
-    printf("Result: %s\n", resultado ? "true" : "false");
     return 0;
 }
