@@ -8,8 +8,8 @@
 "not"   { return NOT; }
 "true"  { return TRUE; }
 "false" { return FALSE; }
-"("     { return '('; }
-")"     { return ')'; }
+"("     { return IZQ; }
+")"     { return DER; }
 \n      { return 0; }  /* Fin de línea, devuelve 0 para indicar el final del análisis. */
 .       { /* Ignorar cualquier otro carácter no reconocido. */ }
 %%

@@ -759,12 +759,12 @@ YY_RULE_SETUP
 case 6:
 YY_RULE_SETUP
 #line 11 "lexer.l"
-{ return '('; }
+{ return IZQ; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 12 "lexer.l"
-{ return ')'; }
+{ return DER; }
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */

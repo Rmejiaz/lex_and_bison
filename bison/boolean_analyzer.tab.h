@@ -58,7 +58,9 @@ extern int yydebug;
     AND = 259,                     /* AND  */
     NOT = 260,                     /* NOT  */
     TRUE = 261,                    /* TRUE  */
-    FALSE = 262                    /* FALSE  */
+    FALSE = 262,                   /* FALSE  */
+    IZQ = 263,                     /* IZQ  */
+    DER = 264                      /* DER  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

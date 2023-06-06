@@ -3,15 +3,18 @@
 #include <stdbool.h>
 %}
 
-%token OR AND NOT TRUE FALSE
+
+%token OR AND NOT TRUE FALSE IZQ DER
 %left OR
 %left AND
 %right NOT
 
 %%
 
-bexpr: bexpr OR bterm   { printf("Result: %s\n", $1 || $3 ? "true" : "false"); }
-     | bterm            { printf("Result: %s\n", $1 ? "true" : "false"); }
+program: bexpr   { printf("Result: %s\n", $1 ? "true" : "false"); }
+
+bexpr: bexpr OR bterm   { $$ = $1 || $3; }
+     | bterm            { $$ =  $1 ; }
      ;
 
 bterm: bterm AND bfactor { $$ = $1 && $3; }
@@ -19,7 +22,7 @@ bterm: bterm AND bfactor { $$ = $1 && $3; }
      ;
 
 bfactor: NOT bfactor    { $$ = !$2; }
-       | '(' bexpr ')'  { $$ = $2; }
+       | IZQ bexpr DER  { $$ = $2; }
        | TRUE            { $$ = true; }
        | FALSE           { $$ = false; }
        ;
